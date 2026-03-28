@@ -1,0 +1,59 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    --var-white: #FFFFFF;
+    --var-grey: #949494;
+    --var-blue-800: #242742;
+    --var-red: #FF6155;
+    --var-grey-900: #48556A;
+    --var-gradient: linear-gradient(to right, #FF6A3A, #FF527B);
+
+    --var-spacing-100: 0.5em;
+    --var-spacing-200: 1em;
+    --var-spacing-300: 1.5em;
+    --var-spacing-400: 2em;
+    --var-spacing-500: 2.5em;
+    --var-spacing-600: 3em;
+    --var-spacing-800: 4em;
+    --var-spacing-900: 4.5em;
+    --var-spacing-1300: 6.5em;
+
+    font-family: "Roboto", sans-serif;
+    background-color: var(--var-blue-700);
+
+    display: flex;
+    min-height: 100vh;
+}
+
+.text-preset-1 {
+    font-size: 2.5em;
+    letter-spacing: 0;
+}
+
+.text-preset-2 {
+    font-size: 1em;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.text-preset-3 {
+    font-size: 0.75em;
+    line-height: 1.5;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.button {
+    font-size: 1em;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-weight: 700;
+}
