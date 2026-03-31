@@ -3,7 +3,7 @@ const emailLabel = document.getElementById("email-label");
 const emailError = document.getElementById("email-error");
 const emailInput = document.getElementById("email");
 
-const successForm = document.getElementById("success-form");
+const successForm = document.getElementById("dismiss-section");
 const card = document.getElementById("card");
 const submittedEmail = document.getElementById("submitted-email");
 const dismissButton = document.getElementById("dismiss-button");
@@ -14,6 +14,7 @@ let email = '';
 function handleInput (e) {
     if (inputState === 'invalid' && e.target.validity.valid) {
         emailError?.classList.add("hidden");
+        inputState = 'valid';
     }
 }
 
@@ -39,9 +40,12 @@ function handleDismissSubmit (e) {
     email = '';
     successForm.classList.add("hidden");
     card.classList.remove("hidden");
+    emailError?.classList.add("hidden");
+    emailForm.reset();
+    inputState = 'valid';
 }
 
-dismissButton?.addEventListener('submit', handleDismissSubmit)
+dismissButton?.addEventListener('click', handleDismissSubmit)
 emailForm?.addEventListener('submit', handleEmailSubmit);
 emailInput?.addEventListener('invalid', handleInvalid);
 emailInput?.addEventListener('input', handleInput);
