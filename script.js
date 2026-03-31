@@ -1,11 +1,12 @@
 const emailForm = document.getElementById("email-form");
 const emailLabel = document.getElementById("email-label");
 const emailError = document.getElementById("email-error");
-const emailInput = document.getElementById("email-input");
+const emailInput = document.getElementById("email");
 
 const successForm = document.getElementById("success-form");
 const card = document.getElementById("card");
 const submittedEmail = document.getElementById("submitted-email");
+const dismissButton = document.getElementById("dismiss-button");
 
 let inputState = 'valid';
 let email = '';
@@ -21,7 +22,7 @@ function handleInvalid (e) {
     emailError?.classList.remove("hidden");
 }
 
-function handleSubmit (e) {
+function handleEmailSubmit (e) {
     e.preventDefault();
     successForm.classList.remove("hidden");
     card.classList.add("hidden");
@@ -33,6 +34,14 @@ function handleSubmit (e) {
     submittedEmail.textContent = email;
 }
 
-emailForm.addEventListener('submit', handleSubmit);
-emailInput.addEventListener('invalid', handleInvalid);
-emailInput.addEventListener('input', handleInput);
+function handleDismissSubmit (e) {
+    e.preventDefault();
+    email = '';
+    successForm.classList.add("hidden");
+    card.classList.remove("hidden");
+}
+
+dismissButton?.addEventListener('submit', handleDismissSubmit)
+emailForm?.addEventListener('submit', handleEmailSubmit);
+emailInput?.addEventListener('invalid', handleInvalid);
+emailInput?.addEventListener('input', handleInput);
