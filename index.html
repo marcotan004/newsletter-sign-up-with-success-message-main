@@ -17,38 +17,42 @@
     <section id="card" class="card">
       <div class="card-banner">
         <picture>
+          <source media="(min-width: 1200px)" srcset="assets/images/illustration-sign-up-desktop.svg">
+          <source media="(min-width: 768px) and (max-width: 1200px)" srcset="assets/images/illustration-sign-up-desktop.svg">
           <source media="(max-width: 768px)" srcset="assets/images/illustration-sign-up-mobile.svg">
           <img src="assets/images/illustration-sign-up-mobile.svg">
         </picture>
       </div>
       <div class="card-content">
-        <div class="card-content-header">
-          <h1 class="text-preset-1 bold">Stay updated!</h1>
-        </div>
-        <div class="class-content-text">
-          <p class="text-preset-2">Join 60,000+ product managers receiving monthly updates on:</p>
-        </div>
-        <div class="card-content-list">
-          <ul class="list text-preset-2">
-            <li class="list-item">Product discovery and building what matters</li>
-            <li class="list-item">Measuring to ensure updates are a success</li>
-            <li class="list-item">And much more!</li>
-          </ul>
-        </div>
-      </div>
-      <form id="email-form" class="email-form">
-        <div class="email-field">
-          <div class="email-input">
-            <div class="email-labels">
-              <label id="email-label" for="email" class="email-label text-preset-3 bold">Email address</label>
-              <span id="email-error" aria-live="polite" class="error hidden text-preset-3 bold">Valid email required</span>
-            </div>
-
-            <input id="email" name="email" type="email" class="email-input-box text-preset-2" placeholder="email@company.com" required>
+        <div class="card-description">
+          <div class="card-content-header">
+            <h1 class="text-preset-1 bold">Stay updated!</h1>
+          </div>
+          <div class="class-content-text">
+            <p class="text-preset-2">Join 60,000+ product managers receiving monthly updates on:</p>
+          </div>
+          <div class="card-content-list">
+            <ul class="list text-preset-2">
+              <li class="list-item">Product discovery and building what matters</li>
+              <li class="list-item">Measuring to ensure updates are a success</li>
+              <li class="list-item">And much more!</li>
+            </ul>
           </div>
         </div>
-        <button>Subscribe to monthly newsletter</button>
-      </form>
+        <form id="email-form" class="email-form">
+          <div class="email-field">
+            <div class="email-input">
+              <div class="email-labels">
+                <label id="email-label" for="email" class="email-label text-preset-3 bold">Email address</label>
+                <span id="email-error" aria-live="polite" class="error hidden text-preset-3 bold">Valid email required</span>
+              </div>
+
+              <input id="email" name="email" type="email" class="email-input-box text-preset-2" placeholder="email@company.com" required>
+            </div>
+          </div>
+          <button><span class="button-text">Subscribe to monthly newsletter</span></button>
+        </form>
+      </div>
     </section>
 
     <div id="dismiss-section" class="dismiss-section hidden">
@@ -59,8 +63,8 @@
           <h1>Thanks for subscribing!</h1>
           <p>A confirmation email has been sent to <span id="submitted-email"></span>. Please open it and click the button inside to confirm your subscription.</p>
       </div>
-      <div id="dismiss-button" class="dismiss-button">
-        <button>Dismiss message</button>
+      <div>
+        <button id="dismiss-button" class="dismiss-button"><span class="button-text">Dismiss message</span></button>
       </div>
     </div>
   </main>

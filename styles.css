@@ -29,6 +29,7 @@ body {
     background-color: var(--var-white);
 
     display: flex;
+    justify-content: center;
     min-height: 100vh;
 }
 
@@ -49,6 +50,7 @@ body {
 }
 
 button {
+    position: relative;
     padding-inline: var(--var-spacing-300);
     padding-block: var(--var-spacing-200);
 
@@ -60,8 +62,32 @@ button {
     border-radius: var(--var-spacing-100);
     color: white;
     background-color: var(--var-blue-800);
-
     width: 100%;
+}
+
+button::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--var-gradient);
+    opacity: 0;
+    transition: 0.2s;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:hover::before {
+    opacity: 1;
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
 }
 
 .bold {
@@ -71,16 +97,28 @@ button {
 .card {
     background-color: var(--var-white);
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: var(--var-spacing-500);
-    width: 100%;
+}
+
+.card-banner {
+    display: flex;
+    justify-content: center;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--var-spacing-300);
+    
 }
 
 .card-content {
     display: flex;
     flex-direction: column;
-    gap: var(--var-spacing-300);
     padding-inline: var(--var-spacing-300);
+    gap: var(--var-spacing-500);
 }
 
 ul {
@@ -118,7 +156,6 @@ li::before {
     display: flex;
     flex-direction: column;
     gap: var(--var-spacing-300);
-    padding-inline: var(--var-spacing-300);
     margin-bottom: 44px;
 }
 
@@ -152,12 +189,72 @@ li::before {
     display: none;
 }
 
-.img {
+picture {
     width: 100%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .form-content {
     display: flex;
     flex-direction: column;
     gap: var(--var-spacing-400);
+}
+
+@media screen and (min-width: 768px) {
+    picture {
+        height: 358px;
+    }
+
+    img {
+        border-radius: var(--var-spacing-100);
+    }
+
+    .email-form {
+        margin-bottom: 0;
+    }
+
+    body {
+        align-items: center;
+        background-color: var(--var-blue-700);
+    }
+
+    .card {
+        padding: var(--var-spacing-500);
+        border-radius: var(--var-spacing-200);
+    }
+
+    .card-content {
+        gap: var(--var-spacing-300);
+        padding: 0px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .text-preset-1 {
+        font-size: 3.5em;
+    }
+    .card {
+        flex-direction: row-reverse;
+        align-items: center;
+        padding: var(--var-spacing-400);
+    }
+
+    .card-content {
+        gap:  var(--var-spacing-400);
+        width: 450px;
+    }
+
+    .card-description {
+        gap:  var(--var-spacing-400);
+        padding-right: var(--var-spacing-500);
+    }
+
+    picture {
+        height: auto;
+    }
 }
